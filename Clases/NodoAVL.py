@@ -10,6 +10,9 @@ class NodoAVL:
 # Clase del Árbol AVL para gestionar el inventario de productos
 class ArbolAVL:
 
+    def __init__(self):
+        self.raiz = None
+
     # Método para insertar un producto en el árbol AVL
     def insertar(self, raiz, producto):
 
@@ -21,6 +24,7 @@ class ArbolAVL:
         elif producto.codigo > raiz.producto.codigo:
             raiz.der = self.insertar(raiz.der, producto)
         else:
+            print(f"Error: Ya existe un producto con el código {producto.codigo}")
             return raiz
 
         # Actualizar la altura del nodo y balancear el árbol
@@ -56,6 +60,13 @@ class ArbolAVL:
             return self.buscar(raiz.izq, codigo)
         else:
             return self.buscar(raiz.der, codigo)
+
+    #Metodo para editar un producto en el arbol AVL
+    def editar_producto(self, raiz, codigo, nombre=None, cantidad=None, precio=None):
+        nodo = self.buscar(raiz, codigo)
+        if nodo:
+            return nodo.producto.editar(nombre=nombre, cantidad=cantidad, precio=precio)
+        return f"Error: No existe un producto con el código {codigo}"
 
     # Métodos para rotaciones (der o izq) para mantener el balance del árbol
     def rotacionDerecha(self, y):
