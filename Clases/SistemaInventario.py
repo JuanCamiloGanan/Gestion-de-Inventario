@@ -1,21 +1,22 @@
 # Importar las clases necesarias
 
 from Producto import Producto
-from NodoAVL import NodoAVL  # Ahora NodoAVL maneja todo el árbol AVL
+from ArbolAVL import ArbolAVL  # Ahora ArbolAVL maneja todo el árbol AVL
 from ColaReabastecimiento import ColaReabastecimiento
 
 class SistemaInventario:
     def __init__(self, limite_critico=10):
 
         self.raiz = None  # Raíz del árbol AVL
-        self.cola_reabastecimiento = ColaReabastecimiento(limite_critico)  # Cola de reabastecimiento
+        self.arbol_avl = ArbolAVL()  # Inicializa el árbol AVL
+        self.cola_reabastecimiento = ColaReabastecimiento(limite_critico)  # Inicializa la cola de reabastecimiento
 
     def agregar_producto(self, codigo, nombre, cantidad, precio):
         producto = Producto(codigo, nombre, cantidad, precio)
 
         # Insertar el producto en el Nodo AVL
         if not self.raiz:
-            self.raiz = NodoAVL(producto)
+            self.arbol_avl.raiz = self.arbol_avl.insertar(self.arbol_avl.raiz, producto)
         else:
             self.raiz = self.raiz.insertar(self.raiz, producto)
 
@@ -50,6 +51,19 @@ class SistemaInventario:
             + [str(nodo.producto)]
             + self._listar_en_orden(nodo.derecha)
         )
+
+    #Metodo para eliminar un producto del inventario y la cola de reabastecimiento
+    def eliminar_producto(self, codigo):
+        if not self.raiz:
+            return "El inventario esta vacio"
+
+        nodo = self.raiz.buscar(self.raiz, codigo)
+        if not nodo:
+            return f"No se encontro un producto con el codigo {codigo}"
+
+        self.raiz = self.raiz.eliminar(self.raiz, codigo)
+        mensaje_cola = self.cola_reabastecimiento.eliminar_producto(codigo)
+        return f"El producto con código{codigo} eliminado del inventario. \n{mensaje_cola}"
 
     def listar_prioridades(self):
         return self.cola_reabastecimiento.listar_prioridades()
