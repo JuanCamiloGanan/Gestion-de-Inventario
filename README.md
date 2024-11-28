@@ -9,6 +9,13 @@
 - Ingeniería Informática
 - Estructura de datos aplicadas
 
+# Clases principales
+
+- [arbol_avl](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/arbol_avl.py)
+- [conexion](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/conexion.py)
+- [operaciones](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/operaciones.py)
+- [pruebas](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/pruebas.py)
+
 # Información del desarrollo
 
 ## gestion-inventarios
