@@ -9,12 +9,16 @@
 - Ingeniería Informática
 - Estructura de datos aplicadas
 
+# Carpeta principal
+
+- [Gestion-Inventario](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/tree/main/Gestion-Inventario)
+
 # Clases principales
 
-- [arbol_avl](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/arbol_avl.py)
-- [conexion](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/conexion.py)
-- [operaciones](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/operaciones.py)
-- [pruebas](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/pruebas.py)
+- [arbol_avl](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/Gestion-Inventario/arbol_avl.py)
+- [conexion](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/Gestion-Inventario/conexion.py)
+- [operaciones](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/Gestion-Inventario/operaciones.py)
+- [pruebas](https://github.com/JuanCamiloGanan/Gestion-de-Inventario/blob/main/Gestion-Inventario/pruebas.py)
 
 # Información del desarrollo
 
